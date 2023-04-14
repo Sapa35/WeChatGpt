@@ -2,3 +2,4 @@
 .idea
 out
 target
+src/main/resources/application.yml
