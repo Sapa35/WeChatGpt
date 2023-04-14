@@ -30,4 +30,16 @@ public class User {
 
     private Integer textType; //消息类型 0=未知 1=文本 2=图片 5=视频 7=小程序 8=链接 9=文件
 
+    public String toString() {
+        return "User: {" +
+                "\tspoken: " + spoken + "\n" +
+                "\trawSpoken: " + rawSpoken + "\n" +
+                "\treceivedName: " + receivedName + "\n" +
+                "\tgroupName: " + groupName + "\n" +
+                "\tgroupRemark: " + groupRemark + "\n" +
+                "\troomType: " + roomType + "\n" +
+                "\tatMe: " + atMe + "\n" +
+                "\ttextType: " + textType + "\n}";
+    }
+
 }

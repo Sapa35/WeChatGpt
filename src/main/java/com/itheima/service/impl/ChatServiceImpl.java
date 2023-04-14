@@ -60,7 +60,8 @@ public class ChatServiceImpl implements ChatService {
             put("content", user.getSpoken());
         }});
         paramMap.put("messages", dataList);
-        JSONObject message = null;
+
+        log.info("user = " + user);
 
         if(user.getRoomType() == 2 || user.getRoomType() == 4){
             log.info("私聊"+"用户"+user.getReceivedName()+"  提问："+user.getSpoken());
