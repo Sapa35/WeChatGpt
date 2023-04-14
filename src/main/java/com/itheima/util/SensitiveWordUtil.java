@@ -3,6 +3,7 @@ package com.itheima.util;
 
 import java.util.*;
 
+// todo delete test
 public class SensitiveWordUtil {
 
     public static Map<String, Object> dictionaryMap = new HashMap<>();
