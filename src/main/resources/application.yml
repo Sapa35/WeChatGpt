@@ -1,5 +1,8 @@
 server:
   port: 8080
-  servlet:
-    context-path: /
+
+openai:
+  chatEndpoint: https://api.openai.com/v1/chat/completions
+  apiKey: Bearer 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
+
 
