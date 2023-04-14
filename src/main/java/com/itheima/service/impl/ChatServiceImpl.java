@@ -79,7 +79,7 @@ public class ChatServiceImpl implements ChatService {
             final RequestBody body = RequestBody.create(mediaType, JSONUtil.toJsonStr(paramMap));
 
             Request request = new Request.Builder()
-                    .url("https://worktool.asrtts.cn/wework/sendRawMessage?robotId=worktool1")
+                    .url(chatEndpoint)
                     .method("POST", body)
                     .addHeader("Authorization", apiKey)
                     .addHeader("Content-Type", "application/json")
@@ -151,7 +151,9 @@ public class ChatServiceImpl implements ChatService {
         }
         JSONObject jsonObject;
         try {
-            jsonObject = JSONUtil.parseObj(body.string());
+            final String bodyStr = body.string();
+            log.error(bodyStr);
+            jsonObject = JSONUtil.parseObj(bodyStr);
             JSONArray choices = jsonObject.getJSONArray("choices");
             JSONObject result = choices.get(0, JSONObject.class, Boolean.TRUE);
             final JSONObject message = result.getJSONObject("message");
