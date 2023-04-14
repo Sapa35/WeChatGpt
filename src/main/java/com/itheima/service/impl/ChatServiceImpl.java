@@ -113,9 +113,10 @@ public class ChatServiceImpl implements ChatService {
                 "{" +
                 "\"type\":203," +
                 "\"titleList\":[" +
-                "\"" + user.getReceivedName() + "\"" +
+                "\"" + user.getGroupName() + "\"" +
                 "]," +
                 "\"receivedContent\":\"" + info.getInfo().getText() + "\"" +
+                (user.getAtMe() ? ",\"atList\":[\"" + user.getReceivedName() + "\"]" : "") +
                 "}" +
                 "]" +
                 "}";
