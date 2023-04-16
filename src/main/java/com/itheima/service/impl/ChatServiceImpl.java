@@ -49,7 +49,6 @@ public class ChatServiceImpl implements ChatService {
         if(user == null){
             return new UserDto(-1,"无法接收到参数",null);
         }
-        //判断消息类型 todo
 
         //构造gpt请求
         Map<String, Object> paramMap = new HashMap<>();
@@ -66,7 +65,7 @@ public class ChatServiceImpl implements ChatService {
         if(user.getRoomType() == 2 || user.getRoomType() == 4){
             log.info("私聊"+"用户"+user.getReceivedName()+"  提问："+user.getSpoken());
         }else {
-            log.info("群聊"+user.getGroupName()+"用户"+user.getGroupRemark()+"  提问："+user.getSpoken());
+            log.info("群聊"+user.getGroupName()+"  用户"+user.getGroupRemark()+"  提问："+user.getSpoken());
         }
 
         final long before = System.currentTimeMillis();

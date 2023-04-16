@@ -19,6 +19,7 @@ public class ChatController {
     @Autowired
     private ChatService chatService;
 
+
     @PostMapping("/chatting")
     public UserDto chatResponse(@RequestBody User user) {
         return chatService.chat(user);
